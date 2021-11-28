@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BH8-ia-u9B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BH8-ia-u9B">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZi-Ay-3yn">
-                                <rect key="frame" x="133" y="103" width="148" height="21"/>
+                                <rect key="frame" x="133.5" y="103" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -40,12 +41,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppo-Km-zYz">
-                                <rect key="frame" x="145.5" y="212" width="123" height="21"/>
+                                <rect key="frame" x="146.5" y="212" width="121.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GFK-Zu-yxv" firstAttribute="centerX" secondItem="lZi-Ay-3yn" secondAttribute="centerX" id="9Ex-2b-Kc0"/>
@@ -59,7 +61,6 @@
                             <constraint firstItem="e4j-6h-3vW" firstAttribute="centerX" secondItem="lZi-Ay-3yn" secondAttribute="centerX" id="ncL-hI-XJo"/>
                             <constraint firstItem="e4j-6h-3vW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="tjK-1Y-PEt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="thermometer" catalog="system" id="Lbt-3s-Dzh"/>
                 </viewController>
@@ -71,10 +72,6 @@
         <scene sceneID="gxw-8b-n5U">
             <objects>
                 <viewController id="oib-wz-lKa" customClass="MapViewController" customModule="PointsOfInterest" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="view" mapType="standard" id="cNm-0T-CpG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="cng-vN-4Ii"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTZ-Bg-EFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -102,7 +99,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="map" catalog="system" width="64" height="56"/>
-        <image name="thermometer" catalog="system" width="42" height="64"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="thermometer" catalog="system" width="81" height="128"/>
     </resources>
 </document>
