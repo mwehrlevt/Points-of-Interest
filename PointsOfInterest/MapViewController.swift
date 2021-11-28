@@ -111,7 +111,10 @@ class MapViewController: UIViewController {
     }
     
     @objc func buttonZoom(_ zoomButton: UIButton){
-        print("Button Pressed")
+        //Zooming in on location: Worlds Tallest Filing Cabinet
+        let center = CLLocationCoordinate2D(latitude: 44.4557, longitude: -73.2175)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001))
+        mapView.setRegion(region, animated: true)
     }
     
     override func viewDidLoad() {
