@@ -39,6 +39,20 @@ class MapViewController: UIViewController {
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
         
+        //Label
+        let switchLabel = UILabel()
+        switchLabel.text = "Point of Intrests"
+        
+        switchLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(switchLabel)
+        
+        let labelTop = switchLabel.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 8)
+        let labelLeading = switchLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+        
+        labelTop.isActive = true
+        labelLeading.isActive = true
+        
+        //Switch
         let switchControl = UISwitch()
         switchControl.isOn = true
         switchControl.setOn(true, animated: true)
@@ -47,7 +61,32 @@ class MapViewController: UIViewController {
         switchControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(switchControl)
         
-        let topSwitch = switchControl.topAnchor.constraing(equalTo: segmentedController.topAnchor, constant 8)
+        let topSwitch = switchControl.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 8)
+        
+        let leadingSwitch = switchControl.leadingAnchor.constraint(equalTo: switchLabel.trailingAnchor, constant: 12)
+        
+        topSwitch.isActive = true
+        leadingSwitch.isActive = true
+        
+        //Find me button
+        let buttonControl = UIButton()
+        buttonControl.backgroundColor = UIColor.white
+        buttonControl.layer.cornerRadius = 2
+        buttonControl.setTitle("Find Me", for: .normal)
+        buttonControl.setTitleColor(UIColor.black, for: .normal)
+        buttonControl.layer.borderWidth = 1
+        
+        buttonControl.addTarget(self, action: #selector(buttonZoom(_:)), for: .touchDown)
+        buttonControl.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(buttonControl)
+        
+        let topButton = buttonControl.topAnchor.constraint(equalTo: switchLabel.bottomAnchor, constant: 8)
+        let leadingButton = buttonControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+        let buttonWidth = buttonControl.widthAnchor.constraint(equalToConstant: buttonControl.titleLabel!.intrinsicContentSize.width + 2.0 * 3)
+        
+        topButton.isActive = true
+        leadingButton.isActive = true
+        buttonWidth.isActive = true
     }
     
     @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
@@ -69,6 +108,10 @@ class MapViewController: UIViewController {
         } else {
             mapView.pointOfInterestFilter = MKPointOfInterestFilter(including: [])
         }
+    }
+    
+    @objc func buttonZoom(_ zoomButton: UIButton){
+        print("Button Pressed")
     }
     
     override func viewDidLoad() {
